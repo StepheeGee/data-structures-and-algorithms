@@ -23,9 +23,13 @@ Write a function named `addExclamation` that takes an array of strings, and retu
 
 Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
+const stringArr = [];
 
 const addExclamation = (arr) => {
-  // Solution code here...
+  arr.forEach(item => {
+    stringArr.push(item + '!');
+  });
+  return stringArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
