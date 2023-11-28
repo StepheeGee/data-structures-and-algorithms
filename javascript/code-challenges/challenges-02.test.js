@@ -24,7 +24,9 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  return arr.map(num => {
+    return num + 1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,9 +36,10 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => {
-  // Solution code here...
+  return arr.map((word) => {
+    return (word + '?');
+  });
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -47,9 +50,17 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
+
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  const newArr = [];
+  for (const num of arr) {
+    newArr.push(Math.pow(2, num));
+  }
+  return newArr;
 };
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
