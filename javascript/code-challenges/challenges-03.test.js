@@ -63,8 +63,9 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter((value) => !forbiddenValues.includes(value));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -106,7 +107,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter((stat) => stat.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,8 +119,11 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr
+    .filter((stat) => stat.baseStat > minBaseStat)
+    .map((stat) => stat.stat.name);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -171,8 +175,9 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  return arr.filter((character) => !character.children || character.children.length === 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -183,8 +188,11 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  const numericValues = arr.filter((value) => typeof value === 'number');
+  const result = numericValues.map((value) => (value % 2 === 0 ? 'even' : 'odd'));
+  return result;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
