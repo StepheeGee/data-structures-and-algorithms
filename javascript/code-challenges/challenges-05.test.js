@@ -36,7 +36,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  // Solution code here...
+  return Object.values(obj).includes(value);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Solution code here...
+  return Object.entries(obj).map(([name, phoneNumber]) => `${name}: ${phoneNumber}`);
 };
 
 
@@ -114,10 +114,15 @@ const characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
+  const houses = arr.reduce((housesArr, character) => {
+    if (character.house && !housesArr.includes(character.house)) {
+      housesArr.push(character.house);
+    }
+    return housesArr;
+  }, []);
   return houses;
 };
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -132,8 +137,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  const foundCharacter = arr.find(char => char.name === character);
+  if (foundCharacter) {
+    const values = Object.values(foundCharacter);
+    return values.includes(null) ? false : values.includes(undefined) ? false : values.includes([]) ? false : values.includes('') ? false : true;
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
