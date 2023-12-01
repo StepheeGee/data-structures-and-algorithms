@@ -24,7 +24,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 };
 
 const getCourseKeys = (obj) => {
-  return Object.keys(obj)
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => {
-  return Object.values(obj).includes(value);
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  return Object.entries(obj).map(([name, phoneNumber]) => `${name}: ${phoneNumber}`);
+  // Solution code here...
 };
 
 
