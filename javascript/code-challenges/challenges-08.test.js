@@ -64,9 +64,12 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -76,8 +79,8 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
+const wordsToCharList = (str) => {
+  return str.split('');
 };
 
 
@@ -123,10 +126,17 @@ const gruffaloCrumble = {
 
 
 const listFoods = (recipe) => {
-  let result = [];
-  // Solution code here...
+  const { ingredients } = recipe;
+  const result = ingredients.map((ingredient) => {
+    const firstSpaceIndex = ingredient.indexOf(' ');
+    const secondSpaceIndex = ingredient.indexOf(' ', firstSpaceIndex + 1);
+    return ingredient.slice(secondSpaceIndex + 1);
+  });
+
   return result;
 };
+
+// used chatgpt for this one because i kept failing and couldn't figure it out. 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
