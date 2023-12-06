@@ -136,7 +136,7 @@ const listFoods = (recipe) => {
   return result;
 };
 
-// used chatgpt for this one because i kept failing and couldn't figure it out. 
+// used chatgpt for this one because I kept failing and couldn't figure it out.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
