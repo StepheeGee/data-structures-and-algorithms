@@ -52,7 +52,7 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-  // Solution code here...
+  return matrix.reduce((acc, curr) => acc + curr.reduce((sum, num) => sum + num, 0), 0);
 };
 
 
@@ -79,8 +79,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here...
-
+  return stores[0].map((_, index) => stores.reduce((acc, store) => acc + store[index], 0));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,7 +93,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  // Solution code here...
+  const result = [];
+  hours.forEach((hour, i) => {
+    result.push({ sales: `${data[i]} cookies`, time: hour });
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -119,7 +122,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  // Solution code here...
+  return arr.find(store => store.store === 'Pet store').items.find(item => item.name === 'Treats').quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
