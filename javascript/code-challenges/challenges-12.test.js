@@ -34,7 +34,7 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   return input.flat().reduce((count, arr) => {
-    count += arr.filter(num => num === target).length;
+    count += arr === target ? 1 : 0;
     return count;
   }, 0);
 };
